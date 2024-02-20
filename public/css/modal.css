@@ -1,0 +1,73 @@
+.mostrar {
+    /* modal */
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+.tranformY-0 {
+    /* contenedor */
+    transform: translateY(0%) !important;
+  }
+  
+  .tranformX-0 {
+    transform: translateX(0%) !important;
+  }
+
+/* Modal de los productos */
+.modal-promos {
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: all 500ms ease;
+  }
+  /* Este bloque nos ayuda a ocultar el scrollbar del  ".contenedor-productos"*/
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .contenedor-promos {
+    overflow: scroll;
+    border-radius: var(--radius);
+    background: #fff;
+    width: 50rem; /*auto */
+    height: 60rem; /*auto */
+    transition: all 500ms ease;
+    transform: translateX(-50%);
+    padding: 0 1.5rem;
+  }
+  
+  .contenedor-close-promos {
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    z-index: 3;
+    position: sticky;
+    top: 3rem;
+    left: 45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contenedor-close-promos:hover {
+    background: #e5e7e9;
+  }
+  
+  .promos {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
