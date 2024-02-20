@@ -4,12 +4,14 @@ import { v4 as uuidv4 } from 'uuid';
 // Configuración del almacenamiento de archivos con multer.
 const storage1080x1920 = multer.diskStorage({
   destination: function (req, file, cb) { // Define la carpeta de destino donde se almacenarán los archivos
-    cb(null, "../publicidad/1080x1920");
+    cb(null, "../shake-menus/menu-shake-uno/public/assets/1080x1920");
+    cb(null, "../shake-menus/menu-shake-dos/public/assets/1080x1920");
+
   },
 
   filename: function (req, file, cb) { // Define el nombre del archivo una vez que se almacena en el destino
-    // cb(null, file.originalname);
-    cb(null, `${uuidv4()}.jpg` );
+    cb(null, file.originalname);
+    // cb(null, `${uuidv4()}.jpg` );
   },
 });
 
@@ -32,11 +34,13 @@ const upload1080x1920 = multer({
 // Configuración del almacenamiento de archivos con multer.
 const storage1080x1152 = multer.diskStorage({
   destination: function (req, file, cb) { 
-    cb(null, "../publicidad/1080x1152");
+    cb(null, "../shake-menus/menu-shake-uno/public/assets/1080x1152");
+    cb(null, "../shake-menus/menu-shake-dos/public/assets/1080x1152");
   },
 
   filename: function (req, file, cb) { // Define el nombre del archivo una vez que se almacena en el destino
-    cb(null, `${uuidv4()}.jpg` );
+    // cb(null, `${uuidv4()}.jpg` );
+    cb(null, file.originalname);
   },
 });
 

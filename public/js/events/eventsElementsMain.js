@@ -1,4 +1,5 @@
-import { getAllImages1080x1920 } from '../services/api-get.js'
+import { getAllImages1080x1920, getAllImages1080x1152 } from '../services/api-get.js'
+import { uploadedImgPrincipalHtml } from '../components/uploadedImages.js';
 
 const upLoadContainer    = document.querySelector('.main-options'),
       modalDePromociones = document.querySelector(".modal-promos"),
@@ -20,12 +21,17 @@ export const eventsMain=() =>{
 const btnShowImages1080x1920= async()=>{
     showModalImg();
     const mainImages = await getAllImages1080x1920();
-    console.log(mainImages)
+    Object.values( mainImages ).forEach((value)=>{
+        // uploadedImgPrincipalHtml( value)
+    })
 }
 
-const btnShowImages1080x1152=()=>{
+const btnShowImages1080x1152= async()=>{
     showModalImg()
-    
+    const secondaryImages = await getAllImages1080x1152();
+    Object.values( secondaryImages ).forEach((value)=>{
+        console.log( value)
+    })
 }
 
 function showModalImg(){
