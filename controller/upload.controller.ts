@@ -74,34 +74,54 @@ export const uploadFiles = {
     });
   },
 
-  deleteImage: (req: Request, res: Response) => {
-    const { id } = req.params;
+  deleteImage1080x1920: async(req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
 
-    const rutaDeArchivoUno = path.join(__dirname, rutas.carpeta1080x1920Uno, `${id}`);
-    const rutaDeArchivoDos = path.join(__dirname, rutas.carpeta1080x1920Dos, `${id}`);
+      const rutaDeArchivoUno = path.join(__dirname, rutas.carpeta1080x1920Uno, `${id}`);
+      const rutaDeArchivoDos = path.join(__dirname, rutas.carpeta1080x1920Dos, `${id}`);
+      const rutaPanel        = path.join(__dirname, rutas.carpetaPanel1080x1920, `${id}`);
 
-    fs.unlink(rutaDeArchivoUno, (err) => {
-      if (err) {
-          return res.status(204).json({
-              msg: `Archivo con el id:${id} no encontrado`,
-          });
-      }
+      await fs.promises.unlink(rutaDeArchivoUno);
+      await fs.promises.unlink(rutaDeArchivoDos);
+      await fs.promises.unlink(rutaPanel)
 
-      // Si la eliminación de la primera ruta es exitosa, intenta eliminar la segunda
-      fs.unlink(rutaDeArchivoDos, (err) => {
-          if (err) {
-              return res.status(204).json({
-                  msg: `Archivo con el id:${id} no encontrado en la segunda ruta`,
-              });
-          }
-
-          return res.status(200).json({
-              msg: "Imagen eliminada en ambas rutas",
-          });
+      res.status(200).json({
+          msg: "Imagen eliminada en ambas rutas",
       });
-  });
 
+  } catch ( error ) {
+    res.status(500).json({
+      msg: "Error, la imagen no existe",
+      error: error,
+    });
+  }
   },
+
+
+  deleteImage1080x1152: async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+
+        const rutaDeArchivoUno = path.join(__dirname, rutas.carpeta1080x1152Uno, `${id}`);
+        const rutaDeArchivoDos = path.join(__dirname, rutas.carpeta1080x1152Dos, `${id}`);
+        const rutaPanel        = path.join(__dirname, rutas.carpetaPanel1080x1152, `${id}`);
+
+        await fs.promises.unlink(rutaDeArchivoUno);
+        await fs.promises.unlink(rutaDeArchivoDos);
+        await fs.promises.unlink(rutaPanel)
+
+        res.status(200).json({
+            msg: "Imagen eliminada en ambas rutas",
+        });
+
+    } catch ( error ) {
+      res.status(500).json({
+        msg: "Error, la imagen no existe",
+        error: error,
+      });
+    }
+},
 
 
 
