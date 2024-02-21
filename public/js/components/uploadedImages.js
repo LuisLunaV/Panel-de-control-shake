@@ -7,7 +7,7 @@ const uploadedImgPrincipalHtml=( imagen )=>{
  <div class="card-contenido" >
  <img src="assets/svg/trash.svg" id='${imagen}' class="btn-delete" data-value="1080x1920">
  </div>
- <li>`;
+ </li>`;
 
  ulList.innerHTML += html;
 }
@@ -20,7 +20,7 @@ const uploadedImgSecondarylHtml=( imagen )=>{
 <div class="card-contenido" >
 <img src="assets/svg/trash.svg" id='${imagen}' class="btn-delete" data-value="1080x1152">
 </div>
-<li>`;
+</li>`;
 
 ulList.innerHTML += html;
 }

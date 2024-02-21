@@ -21,10 +21,14 @@ export const eventsMain = () => {
 
 // Función para mostrar imágenes de 1080x1920
 const btnShowImages1080x1920 = async () => {
-    // Muestra el modal de imágenes
-    showModalImg();
+   
     // Obtiene todas las imágenes de 1080x1920
     const mainImages = await getAllImages1080x1920();
+    if(!Object.keys(mainImages).length){
+        return alert('No hay imagenes para mostrar');
+       }
+     // Muestra el modal de imágenes
+     showModalImg();
     // Itera sobre las imágenes y las agrega al contenedor principal
     Object.values(mainImages).forEach((value) => {
         uploadedImgPrincipalHtml(value);
@@ -32,11 +36,14 @@ const btnShowImages1080x1920 = async () => {
 }
 
 // Función para mostrar imágenes de 1080x1152
-const btnShowImages1080x1152 = async () => {
-    // Muestra el modal de imágenes
-    showModalImg();
+const btnShowImages1080x1152 = async () => {   
     // Obtiene todas las imágenes de 1080x1152
     const secondaryImages = await getAllImages1080x1152();
+   if(!Object.keys(secondaryImages).length){
+    return alert('No hay imagenes para mostrar');
+   }
+    // Muestra el modal de imágenes
+    showModalImg();
     // Itera sobre las imágenes y las agrega al contenedor secundario
     Object.values(secondaryImages).forEach((value) => {
         uploadedImgSecondarylHtml(value);
