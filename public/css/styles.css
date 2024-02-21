@@ -41,7 +41,9 @@ img {
   display: block;
   height: auto;
 }
-
+li{
+  list-style: none;
+}
 
 /* Resolcion para dispositivos moviles muy pequeños: */
 @media (max-width: 575px) {

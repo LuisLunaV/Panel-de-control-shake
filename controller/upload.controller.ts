@@ -7,7 +7,7 @@ import { rutas } from './index';
 export const uploadFiles = {
   readDirectory1080x1920: (req: Request, res: Response) => {
     
-    const rutaDeArchivo = path.join(__dirname, rutas.carpeta1080x1920Uno);
+    const rutaDeArchivo = path.join(__dirname, rutas.carpetaPanel1080x1920);
 
     fs.readdir( rutaDeArchivo , (err, archivos) => {
 
@@ -31,8 +31,8 @@ export const uploadFiles = {
   },
 
   readDirectory1080x1152: (req: Request, res: Response) => {
-    console.log(req)
-    const rutaDeArchivo = path.join(__dirname, rutas.carpeta1080x1920Uno);
+    
+    const rutaDeArchivo = path.join(__dirname, rutas.carpetaPanel1080x1152);
 
     fs.readdir( rutaDeArchivo , (err, archivos) => {
 
