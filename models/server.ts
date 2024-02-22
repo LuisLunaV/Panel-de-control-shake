@@ -1,4 +1,5 @@
 import express, { Application } from "express";
+// import cors from 'cors';
 import uploadImageRouter from '../routers/upload.router';
 class Server {
   private app: Application;
@@ -15,6 +16,7 @@ class Server {
   }
 
   middlewares() {
+
     this.app.use(express.json());
     this.app.use(express.static('public'));
   }

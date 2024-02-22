@@ -42,7 +42,7 @@ function processFiles(file, dimensions) {
       const width = this.width;
       const height = this.height;
       const imgDimensions = `${width}x${height}`;
-
+      
       // Verifica si las dimensiones de la imagen coinciden con las esperadas
       if (dimensions !== imgDimensions) {
         return alert("La imagen no tiene las dimensiones necesarias para esta pantalla.");
