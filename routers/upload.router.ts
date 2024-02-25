@@ -5,10 +5,12 @@ import { upload1080x1920, upload1080x1152 } from '../config/multerConfig';
 import { uploadFiles } from '../controller/upload.controller';
 const router = Router();
 // Configura CORS para esta ruta
-router.use(cors({
-    origin: 'http://localhost:8080',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }));
+const corsOptions = {
+  origin: ['http://localhost:8080', 'http://localhost:8081'],
+  optionsSuccessStatus: 200
+};
+
+router.use(cors( corsOptions ));
   
 router.get('/allImages1080x1920', uploadFiles.readDirectory1080x1920);
 router.get('/allImages1080x1152', uploadFiles.readDirectory1080x1152);

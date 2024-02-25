@@ -133,6 +133,12 @@ nav {
   justify-content: space-between;
 }
 
+
+.cont-publicidad-principal{
+  width: auto;
+  height: auto;
+}
+
 .titulo-panel {
   display: flex;
   align-items: center;
