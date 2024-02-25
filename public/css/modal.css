@@ -99,7 +99,7 @@
   
   .contenedor-promos {
     overflow: scroll;
-    border-radius: .5rem;
+    border-radius: 2rem;
     background: #fff;
     /* width: 50rem; auto */
 
@@ -133,6 +133,7 @@
 
 
   .card {
+    border-radius: 2rem;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: row;
