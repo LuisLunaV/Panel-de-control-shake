@@ -59,6 +59,7 @@ li{
   }
 
   .container-options {
+    overflow: hidden;
     width: 80%;
   }
 }

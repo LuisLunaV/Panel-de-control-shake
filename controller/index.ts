@@ -28,6 +28,7 @@ const rutas: TRutas ={
     //     carpeta1080x1152Dos: "../../shake-menus/menu-shake-dos/public/assets/1080x1152"
     
     //    }
+
     export{
         rutas
     }
