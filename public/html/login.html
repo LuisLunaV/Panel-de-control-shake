@@ -10,15 +10,15 @@
     <div class="div-logo">
         <img src="../assets/Logo SS 3240x2180px -cut.png" alt="">
     </div>
-    <form class="form">     
+    <form class="form-login" method="post">     
         <p class="form-title">Inicia sesion con tu cuenta</p>
          <div class="input-container">
-           <input type="email" placeholder="Enter email">
+           <input type="text" id="login_NumEmpleado" name="User_NumEmpleado" placeholder="Numero de empleado">
            <span>
            </span>
        </div>
        <div class="input-container">
-           <input type="password" placeholder="Enter password">
+           <input type="password" id="login_Password" name="User_Password" placeholder="Contraseña">
          </div>
           <button type="submit" class="submit">
          Iniciar sesion
@@ -26,9 +26,9 @@
  
        <p class="signup-link">
          No account?
-         <a href="">Sign up</a>
+         <a href="./register.html">Sign up</a>
        </p>
     </form>
- 
+ <script src="../index.js" type="module"></script>
 </body>
 </html>
