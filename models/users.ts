@@ -7,6 +7,12 @@ const User = db.define('Users',{
         autoIncrement: true,
         primaryKey: true
     },
+    User_NumEmpleado:{
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+
+    },
     User_Name:{
         type: DataTypes.STRING,
         allowNull: false
