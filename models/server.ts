@@ -1,27 +1,41 @@
 import express, { Application } from "express";
-// import cors from 'cors';
-import uploadImageRouter from '../routers/upload.router';
+import { dbConnection } from '../db/config.db';
+
+import { usersRouter, authRouter, uploadImageRouter} from '../routers/index.routes';
+
 class Server {
   private app: Application;
   private port: string;
   private paths = {
-    uploadImages: "/api/v1/imagen",
+    users: "/api/v1/users",
+    auth: "/api/v1/auth",
+    uploadImages: "/api/v1/imagen"
   };
   constructor() {
     this.app = express();
-    this.port = "8082";
+    this.port = process.env.PORT || "8082";
 
-    this.router();
+    this.connectDB();
     this.middlewares();
+    this.router();
+  }
+
+  async connectDB(){
+    await dbConnection();
   }
 
   middlewares() {
 
-    this.app.use(express.json());
+   // Lectura del body
+   this.app.use(express.json());
+
     this.app.use(express.static('public'));
+    this.app.use(express.static('src'));
   }
 
   router() {
+    this.app.use( this.paths.users, usersRouter );
+    this.app.use( this.paths.auth, authRouter )
     this.app.use( this.paths.uploadImages, uploadImageRouter);
   }
 
