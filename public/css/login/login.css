@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Open+Sans&family=Patrick+Hand&family=Permanent+Marker&family=Playfair+Display:wght@500&family=Prompt:wght@200;300;400;500;600;700&family=Roboto:wght@400;700;900&family=Share+Tech+Mono&family=Ubuntu:wght@300;400;500;700&family=VT323&display=swap);
+@import url(./animaciones.css);
 :root {
     --primario: #5e9e40;
     --verdeClaro: #7ec461;
