@@ -11,7 +11,7 @@ export const registerForm =()=>{
         return;
       }  
 
-        const data = formData( formRegister );
-        console.log(data)
+        const { User_PassworDos, ...rest } = formData( formRegister );
+        console.log(rest)
     })
 };
