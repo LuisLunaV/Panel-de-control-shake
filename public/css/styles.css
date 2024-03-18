@@ -3,6 +3,7 @@
 @import url(normalize.css);
 @import url(upload.css);
 @import url(modal.css);
+@import url(loader.css);
 
 :root {
   --primario: #5e9e40;

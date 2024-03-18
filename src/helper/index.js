@@ -1,8 +1,11 @@
+import { detectWindow } from './detectWindow.js';
 import { comparePasswords, authFailure } from './validateAuthenticationFields.js'
 import { formData } from './formData.js';
-
+import { validateSessionToken } from './validateSessionToken.js';
 export{
-    authFailure,
+    formData,
+    detectWindow,
     comparePasswords,
-    formData
+    authFailure,
+    validateSessionToken
 }

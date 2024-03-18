@@ -1,8 +1,10 @@
 const comparePasswords =()=>{
     const passwordInput       = document.getElementById("passwordUno");
     const repitePasswordInput = document.getElementById("passwordDos");
-    (passwordInput.value !== repitePasswordInput.value)?true:false;
-    }
+
+    return (passwordInput.value !== repitePasswordInput.value)?false:true;
+
+}
 
 const authFailure =( err )=>{
     const textBoxNumEmpleado = document.querySelector('#login_NumEmpleado'),

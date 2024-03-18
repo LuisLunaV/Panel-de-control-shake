@@ -1,8 +1,9 @@
 import { postLogin } from '../services/auth/login-post.js'
 import { formData, authFailure } from '../helper/index.js';
-const formLogin = document.querySelector('.form-login');
+const formLogin       = document.querySelector('.form-login');
 const txt_NumEmpleado = document.querySelector("#login_NumEmpleado");
 const txt_Password    = document.querySelector("#login_Password");
+
 export const loginForm =()=>{
 
     formLogin.addEventListener('submit', async( e )=>{
@@ -11,8 +12,15 @@ export const loginForm =()=>{
         
        const {user, token } = await postLogin( data )
        .catch( authFailure );
-       console.log({ user, token })
+
+       const {User_Password, User_Email, User_Id, User_Status, ...rest} = user;
+
+       sessionStorage.setItem('token', token);
+       sessionStorage.setItem('user', JSON.stringify( rest ))
+
+       window.location = '/';
         txt_NumEmpleado.value = '';
         txt_Password.value = '';
+
     })
 }
