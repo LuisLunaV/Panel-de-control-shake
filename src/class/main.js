@@ -1,9 +1,13 @@
-import { eventsMain, eventsModal, eventInputFile } from "../events/index.js";
-import { detectWindow } from '../helper/detectWindow.js';
 import { loginForm,registerForm } from '../auth/index.js';
+import { detectWindow, validateSessionToken, singOff } from '../helper/index.js'
+import { loadedComponents } from '../util/index.js';
+import { eventsMain, eventsModal, eventInputFile } from "../events/index.js";
+import { showUserName } from '../components/nav/userName.js';
+
 export class Main {
   constructor() {
     this.window = detectWindow();
+    this.loader = loadedComponents();
     this.login();
     this.events();
   }
@@ -18,9 +22,12 @@ export class Main {
   }
   events() {
     if( this.window === '/'){
+      validateSessionToken();
+      showUserName();
       eventsMain();
       eventsModal();
       eventInputFile();
+      singOff();
     }
   }
 }
