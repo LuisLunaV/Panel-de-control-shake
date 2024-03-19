@@ -111,7 +111,7 @@ li{
     width: 50%;
     padding: 0 2.5rem;
   }
-  .titulo-panel h4 {
+  .titulo-panel .user-name span {
     font-size: 3rem;
   }
 
@@ -144,13 +144,33 @@ nav {
 .titulo-panel {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content:flex-end;
+  gap:5px;
+}
+/* Estilos para imitar el botón btn-outline-success de Bootstrap */
+.btn-cerrar-sesion {
+  width: auto;
+  font-size: 2.5rem;
+  font-family: var(--fuenteSecundari);
+  color: #fff;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-.titulo-panel h4 {
+.btn-cerrar-sesion:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.titulo-panel .user-name {
+  padding-right: 10px;
+  border-right: solid 2px var(--grisClaro);
+}
+.titulo-panel .user-name span{
   color: white;
-  font-family: var(--fuentePrincipal);
-  font-weight: 800;
+  font-family: var(--fuenteSecundari);
+  font-size: 2.5rem;
   margin: 0;
 }
 
