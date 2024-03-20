@@ -49,4 +49,6 @@ User.init({
     timestamps: false
 });
 
-export { User };
+export { 
+    User 
+}

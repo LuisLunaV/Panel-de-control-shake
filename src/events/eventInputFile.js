@@ -1,5 +1,5 @@
 import {postImages1080x1920, postImages1080x1152 } from "../services/api-post.js";
-
+import{ BitacoraUpload } from '../class/bitacora.class.js'
 // Selecciona los elementos de input del archivo
 const inputFileUno = document.querySelector("#fileUno");
 const inputFileDos = document.querySelector("#fileDos");
@@ -16,7 +16,7 @@ export const eventInputFile = () => {
   // Evento para inputFileDos
   inputFileDos.addEventListener("change", ({ target }) => {
     let files = target.files;
-    // Procesa el archivo seleccionado con las dimensiones adecuadas
+
     processFiles(files[0], "1080x1152");
   });
 };
@@ -68,4 +68,8 @@ async function uploadFile(file, dimensions) {
     const { msg } = await postImages1080x1152(file);
     alert(msg);
   }
+
+  // Registramos los cambios en la bitacora
+  const bitacoraUpload = new BitacoraUpload( file );
+  bitacoraUpload.uploadImg();
 }

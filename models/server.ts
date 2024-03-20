@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import { dbConnection } from '../db/config.db';
 
-import { usersRouter, authRouter, uploadImageRouter} from '../routers/index.routes';
+import { usersRouter, authRouter, uploadImageRouter, bitacoraRouter } from '../routers/index.routes';
 
 class Server {
   private app: Application;
@@ -9,8 +9,10 @@ class Server {
   private paths = {
     users: "/api/v1/users",
     auth: "/api/v1/auth",
-    uploadImages: "/api/v1/imagen"
+    uploadImages: "/api/v1/imagen",
+    bitacora: "/api/v1/bitacora"
   };
+
   constructor() {
     this.app = express();
     this.port = process.env.PORT || "8082";
@@ -37,6 +39,7 @@ class Server {
     this.app.use( this.paths.users, usersRouter );
     this.app.use( this.paths.auth, authRouter )
     this.app.use( this.paths.uploadImages, uploadImageRouter);
+    this.app.use( this.paths.bitacora, bitacoraRouter );
   }
 
   listen() {
