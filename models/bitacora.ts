@@ -5,6 +5,7 @@ import { IBitacora } from '../interfaces/IBitacora';
 class Bitacora extends Model<IBitacora> implements IBitacora{
     public Bitacora_Id!:number;
     public Bitacora_NumEmpleado!:string;
+    public Bitacora_Name!:string;
     public Bitacora_Imagen!:string;
     public Bitacora_Movimiento!:string;
     public Bitacora_Fecha!:string;
@@ -12,11 +13,15 @@ class Bitacora extends Model<IBitacora> implements IBitacora{
 
 Bitacora.init({
 Bitacora_Id: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
 },
 Bitacora_NumEmpleado: {
+    type: DataTypes.STRING,
+    allowNull: false
+},
+Bitacora_Name: {
     type: DataTypes.STRING,
     allowNull: false
 },

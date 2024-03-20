@@ -13,7 +13,7 @@ export const registerForm = ( ) =>{
       }  
 
         const { User_PassworDos, ...rest } = formData( formRegister );
-        console.log(rest)
+  
           //Enviamos la data para el registro
           const resp = await postUserCreate( rest )
           .catch((err)=>{
