@@ -10,8 +10,8 @@ const {
   deleteImage1080x1920,
   deleteImage1080x1152,
 } = {
-  url: "http://localhost:8082",
-  // url: "http://192.168.100.11:8082",
+  // url: "http://localhost:8082",
+  url: "http://192.168.100.11:8082",
   auth: "/api/v1/auth",
   register: "/api/v1/users",
   bitacora: "/api/v1/bitacora",
