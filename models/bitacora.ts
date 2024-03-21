@@ -8,7 +8,9 @@ class Bitacora extends Model<IBitacora> implements IBitacora{
     public Bitacora_Name!:string;
     public Bitacora_Imagen!:string;
     public Bitacora_Movimiento!:string;
-    public Bitacora_Fecha!:string;
+    public Bitacora_Fecha!:Date;
+    public Bitacora_Hora!:string;
+
 }
 
 Bitacora.init({
@@ -32,11 +34,21 @@ Bitacora_Imagen: {
 Bitacora_Movimiento: {
     type: DataTypes.STRING,
     allowNull: false
+},
+Bitacora_Fecha: {
+    type: DataTypes.DATE,
+    allowNull: false
+},
+Bitacora_Hora:{
+    type: DataTypes.STRING,
+    allowNull: false
 }
 },{
     sequelize:db,
     modelName: 'Bitacora',
-    tableName: 'Bitacora'
+    tableName: 'Bitacora',
+    timestamps: false
+
 });
 
 export{
