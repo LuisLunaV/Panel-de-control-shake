@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import { postNewChange } from '../controller/bitacora.controller';
+import { bitacora } from '../controller/bitacora.controller';
 const router = Router();
 
-router.post('/', postNewChange);
+router.get('/users/:date', bitacora.getUsersBitacora)
+router.post( '/', bitacora.postNewChange );
 
 export default router;
