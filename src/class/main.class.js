@@ -35,6 +35,7 @@ export class Main {
   bitacora(){
     if( this.window === '/html/bitacora.html'){
       loadedComponents();
+      validateSessionToken();
       eventBitacora();
     }
   }
