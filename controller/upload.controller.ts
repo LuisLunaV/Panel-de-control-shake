@@ -84,7 +84,7 @@ export const uploadFiles = {
 
       await fs.promises.unlink(rutaDeArchivoUno);
       await fs.promises.unlink(rutaDeArchivoDos);
-      await fs.promises.unlink(rutaPanel)
+      await fs.promises.unlink(rutaPanel);
 
       res.status(200).json({
           msg: "Imagen eliminada en ambas rutas",
@@ -123,7 +123,4 @@ export const uploadFiles = {
     }
 },
 
-
-
-  
 };
