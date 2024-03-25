@@ -13,7 +13,7 @@ export const loginForm =()=>{
        const {user, token } = await postLogin( data )
        .catch( authFailure );
 
-       const {User_Password, User_Email, User_Id, User_Status, ...rest} = user;
+       const {User_Password, User_Email, User_Id, ...rest} = user;
 
        sessionStorage.setItem('token', token);
        sessionStorage.setItem('user', JSON.stringify( rest ))
