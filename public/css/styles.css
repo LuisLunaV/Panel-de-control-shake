@@ -4,7 +4,7 @@
 @import url(upload.css);
 @import url(modal.css);
 @import url(loader.css);
-
+@import url(bitacora/bitacora.css);
 :root {
   --primario: #5e9e40;
   --verdeClaro: #7ec461;

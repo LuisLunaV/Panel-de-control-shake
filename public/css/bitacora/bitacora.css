@@ -1,4 +1,37 @@
 /* Utilidades */
+a{
+  text-decoration: none !important;
+}
+
+.btn-ver-bitacora {
+  width: auto;
+  font-size: 2.5rem;
+  font-family: var(--fuenteSecundari);
+  color: #fff;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-ver-bitacora:hover{
+  cursor: pointer;
+}
+/* Estilos para imitar el botón btn-outline-success de Bootstrap */
+.btn-regresar {
+  width: auto;
+  font-size: 2.5rem;
+  font-family: var(--fuenteSecundari);
+  color: #fff;
+  background-color: transparent;
+  padding: 10px;
+  padding-right: 10px;
+  border-right: solid 2px var(--grisClaro);
+}
+
+.btn-regresar:hover {
+  cursor: pointer;
+}
+
 .column-flex {
   display: flex;
   flex-direction: column;
@@ -58,21 +91,6 @@
   padding-top: 2rem;
 }
 
-.group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
-  position: relative;
-  max-width: 250px;
-}
-
-.icon {
-  position: absolute;
-  left: 1rem;
-  fill: #9e9ea7;
-  width: 1rem;
-  height: 1rem;
-}
 
 /* Tabla */
 .alinear {

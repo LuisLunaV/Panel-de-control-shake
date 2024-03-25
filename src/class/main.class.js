@@ -1,5 +1,5 @@
 import { loginForm,registerForm } from '../auth/index.js';
-import { detectWindow, validateSessionToken, singOff } from '../helper/index.js'
+import { detectWindow, validateSessionToken, validateRolBitacora, singOff } from '../helper/index.js'
 import { loadedComponents } from '../util/index.js';
 import { eventsMain, eventsModal, eventInputFile, eventBitacora } from "../events/index.js";
 import { showUserName } from '../components/nav/userName.js';
@@ -36,7 +36,10 @@ export class Main {
     if( this.window === '/html/bitacora.html'){
       loadedComponents();
       validateSessionToken();
+      validateRolBitacora();
       eventBitacora();
+      singOff();
+
     }
   }
 }
